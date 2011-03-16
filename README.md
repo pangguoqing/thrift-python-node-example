@@ -12,11 +12,11 @@ There were some gotchas with getting everything setup, some of the code that is 
 
 By default, Thrift generates the following:
 
-if (!arg.property)
+	if (!arg.property)
 
 This is actually incorrect and will cause problems hydrating the object.  Instead you should be using:
 
-if (null != arg.property)
+	if (null != arg.property)
 
 There were also some issues with python and module importing, but I think those are probably just me being moronic.  I was able to get around this by using sys.path.append in a few select files.
 
